@@ -1,8 +1,8 @@
-export const ItemListContainer =()=>{
+export const ItemListContainer =(props)=>{
     return (
     <section>
     
-    <h1>Aquí debería ir el catálogo</h1>
+    <h1>{props.mensaje}</h1>
     
     </section>
     )

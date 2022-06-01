@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <NavBarComponent></NavBarComponent>
-      <ItemListContainer></ItemListContainer>
+      <ItemListContainer mensaje="Aquí debería ir la lista de productos"></ItemListContainer>
     </div>
   );
 }
