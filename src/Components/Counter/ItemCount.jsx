@@ -4,11 +4,11 @@ import { Card, ListGroupItem, ListGroup} from 'react-bootstrap';
 
 
 export const Counter = () => {
-let [stock,setStock]=useState(11)
-let [contador1, setContador1] = useState(0)
+let [stock,setStock]=useState(10)
+let [contador1, setContador1] = useState(1)
 
 const incrementar = () => {
-  if (contador1<=10 && stock<12 && stock>0){
+  if (contador1<=10 && stock<13 && stock>0){
 setContador1(contador1+1)
 setStock(stock-1)
  console.log(stock)
