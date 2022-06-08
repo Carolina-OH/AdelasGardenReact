@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { Card, ListGroupItem, ListGroup} from 'react-bootstrap';
 
@@ -6,11 +5,7 @@ import { Card, ListGroupItem, ListGroup} from 'react-bootstrap';
 export const Counter = () => {
 let [stock,setStock]=useState(10)
 let [contador1, setContador1] = useState(1)
-let [contador10, setContador10] = useState(0)
 
-/* const aumento =()=>{
-  setContador10(contador10+1)
-} prueba de contador con use Effect*/
 
 const incrementar = () => {
   if (contador1<=10 && stock<13 && stock>0){
@@ -34,17 +29,10 @@ else
 setContador1(0)
 }
 
-/* useEffect(()=>{
-  setInterval(() => {
-    aumento()
-  }, 1000);
-  },); 
-  Prueba de contador con use effect
-  */
 
   return (
       <div>
-        {/* {contador10} */}
+
     <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src="https://static.vecteezy.com/system/resources/previews/002/571/082/non_2x/cute-cactus-plant-in-pot-kawaii-character-icon-free-vector.jpg" />
   <Card.Body>
