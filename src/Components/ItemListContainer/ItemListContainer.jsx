@@ -1,5 +1,6 @@
 import { Counter } from "../Counter/ItemCount";
 import { useState, useEffect } from "react";
+import { CardGroup } from "react-bootstrap";
 
 const productos = [
   {
@@ -39,7 +40,7 @@ const productos = [
     nombre: "Tierra de hojas",
     des: "Saco de 5kg de tierra de hojas",
     imagen:
-      "https://viverosnicolas.cl/wp-content/uploads/2020/10/WhatsApp-Image-2020-10-13-at-16.21.04-2.jpeg",
+      "https://sodimac.scene7.com/is/image/SodimacCL/3160254?fmt=jpg&fit=fit,1&wid=420&hei=420",
     precio: "8000",
   },
   {
@@ -85,10 +86,12 @@ const ItemListContainer = () => {
   }, []);
 
   return (
-    <section className="Contenedor">
+    <section className="Contenedor card-group g-4 m-4 center">
       {items.map((item) => 
         <div>
+
           <Counter stock="10" inicial="1" nombre={item.nombre} des={item.des} img={item.imagen} precio={item.precio}/>
+
         </div>
       )}
     </section>

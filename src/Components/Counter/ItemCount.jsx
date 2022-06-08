@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
+import { Card, ListGroupItem, ListGroup, Row, Col } from "react-bootstrap";
 
 export const Counter = (props) => {
   let [stock, setStock] = useState(10);
@@ -24,37 +24,39 @@ export const Counter = (props) => {
   };
 
   return (
-    <div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={props.img} />
-        <Card.Body>
-          <Card.Title>{props.nombre}</Card.Title>
-          <Card.Text>{props.des}</Card.Text>
-        </Card.Body>
-        <ListGroup className="list-group-flush">
-          <ListGroupItem>
-            <p>{props.precio}</p>
-          </ListGroupItem>
-          <ListGroupItem>
-            <p>Quedan {stock} unidades</p>
-          </ListGroupItem>
-          <ListGroupItem>
-            <p>{contador1}</p>
-          </ListGroupItem>
-        </ListGroup>
-        <Card.Body>
-          <Card.Link href="#">
-            <button className="quitar" onClick={decrementar}>
-              quitar
-            </button>
-          </Card.Link>
-          <Card.Link href="#">
-            <button className="agregar" onClick={incrementar}>
-              agregar
-            </button>
-          </Card.Link>
-        </Card.Body>
-      </Card>
+    <div className="m-3">
+      {
+        <Card style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={props.img} />
+          <Card.Body>
+            <Card.Title>{props.nombre}</Card.Title>
+            <Card.Text>{props.des}</Card.Text>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroupItem>
+              <p>{props.precio}</p>
+            </ListGroupItem>
+            <ListGroupItem>
+              <p>Quedan {stock} unidades</p>
+            </ListGroupItem>
+            <ListGroupItem>
+              <p>{contador1}</p>
+            </ListGroupItem>
+          </ListGroup>
+          <Card.Body>
+            <Card.Link>
+              <button className="quitar" onClick={decrementar}>
+                quitar
+              </button>
+            </Card.Link>
+            <Card.Link>
+              <button className="agregar" onClick={incrementar}>
+                agregar
+              </button>
+            </Card.Link>
+          </Card.Body>
+        </Card>
+      }
     </div>
   );
 };
