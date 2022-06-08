@@ -86,7 +86,7 @@ const ItemListContainer = () => {
   }, []);
 
   return (
-    <section className="Contenedor card-group g-4 m-4 center">
+    <section className="Contenedor card-group g-4 m-4 justify-content-center">
       {items.map((item) => 
         <div>
 
