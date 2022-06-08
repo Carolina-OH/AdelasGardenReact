@@ -34,7 +34,7 @@ export const Counter = (props) => {
           </Card.Body>
           <ListGroup className="list-group-flush">
             <ListGroupItem>
-              <p>{props.precio}</p>
+              <p>Precio:{props.precio}</p>
             </ListGroupItem>
             <ListGroupItem>
               <p>Quedan {stock} unidades</p>
