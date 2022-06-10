@@ -5,6 +5,8 @@ import {
     DropdownToggle, DropdownMenu, DropdownItem*/
 } from 'react-bootstrap';
 import { CartWidget } from './CartWidget';
+import {Link} from 'react-router-dom'
+
 export default NavBarComponent
 
 function NavBarComponent() {

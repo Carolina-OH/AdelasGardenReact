@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import productos from "../ItemJs/ItemjsObjeto";
 import CardItem from "../ItemJs/ItemJs";
 
+
 const ItemList = () => {
   const [items, setItems] = useState([]);
 
@@ -32,7 +33,7 @@ const ItemList = () => {
       {items.map((item) => 
         <div key={item.id}>
 
-          <CardItem stock={item.stock} inicial="1" nombre={item.nombre} des={item.des} img={item.imagen} precio={item.precio}/>
+          <CardItem stock={item.stock} inicial="1" nombre={item.nombre} des={item.des} img={item.imagen} precio={item.precio} id={item.id}/>
 
         </div>
       )}

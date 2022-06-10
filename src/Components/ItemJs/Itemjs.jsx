@@ -1,9 +1,13 @@
 import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
 import { Counter } from "../Counter/ItemCount";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import VerDetalle from "../ItemDetail/ItemDetail";
 
 
 const CardItem = (props) => {
   
+  const id=props.item
+
   return (
     <div className="m-3">
       {
@@ -19,8 +23,10 @@ const CardItem = (props) => {
             </ListGroupItem>
           </ListGroup>
             <Counter stock={props.stock}/>
-
+            <ItemDetail id={props.id}/>
+            <button>Ver detalle</button>
         </Card>
+        
       }
     </div>
   );
