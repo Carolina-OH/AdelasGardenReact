@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Card, ListGroupItem, ListGroup, Row, Col } from "react-bootstrap";
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 export const Counter = (props) => {
-  let [stock, setStock] = useState(10);
+  let [stock, setStock] = useState(props.stock);
   let [contador1, setContador1] = useState(1);
 
   const incrementar = () => {
-    if (contador1 <= 10 && stock < 13 && stock > 0) {
+    if (stock>0 && contador1<(props.stock)) {
+      console.log(contador1)
       setContador1(contador1 + 1);
       setStock(stock - 1);
       console.log(stock);
@@ -24,26 +25,18 @@ export const Counter = (props) => {
   };
 
   return (
-    <div className="m-3">
+    <div>
       {
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={props.img} />
-          <Card.Body>
-            <Card.Title>{props.nombre}</Card.Title>
-            <Card.Text>{props.des}</Card.Text>
-          </Card.Body>
-          <ListGroup className="list-group-flush">
+        <div>
+            <ListGroup>
             <ListGroupItem>
-              <p>Precio:{props.precio}</p>
+              <p>Quedan {stock-1} unidades</p>
             </ListGroupItem>
             <ListGroupItem>
-              <p>Quedan {stock} unidades</p>
+              <p>Tienes {contador1} en tu carrito</p>
             </ListGroupItem>
-            <ListGroupItem>
-              <p>{contador1}</p>
-            </ListGroupItem>
-          </ListGroup>
-          <Card.Body>
+            </ListGroup>
+            <Card.Body>
             <Card.Link>
               <button className="quitar" onClick={decrementar}>
                 quitar
@@ -53,9 +46,10 @@ export const Counter = (props) => {
               <button className="agregar" onClick={incrementar}>
                 agregar
               </button>
-            </Card.Link>
-          </Card.Body>
-        </Card>
+              </Card.Link>
+              </Card.Body>
+          </div>
+
       }
     </div>
   );
