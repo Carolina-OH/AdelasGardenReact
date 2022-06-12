@@ -5,7 +5,6 @@ import {
     DropdownToggle, DropdownMenu, DropdownItem*/
 } from 'react-bootstrap';
 import { CartWidget } from './CartWidget';
-import {Link} from 'react-router-dom'
 
 export default NavBarComponent
 
@@ -14,11 +13,13 @@ function NavBarComponent() {
 
   <Navbar bg="light" variant="light">
     <Container>
-    <Navbar.Brand href="#home">Adela's Garden</Navbar.Brand>
+
+    <Navbar.Brand href="/">Adela's Garden</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="#home">Macetas</Nav.Link>
-      <Nav.Link href="#features">Plantas</Nav.Link>
-      <Nav.Link href="#pricing">¿Quienes somos?</Nav.Link>
+      <Nav.Link href="/">Home</Nav.Link>
+      <Nav.Link href="/categoria/plantas">Plantas</Nav.Link>
+      <Nav.Link href="/categoria/accesorios">Accesorios</Nav.Link>
+      <Nav.Link href="/categoria/mantenimiento">Mantenimiento</Nav.Link>
     </Nav>
     <CartWidget className="ml-auto"></CartWidget>
     </Container>

@@ -1,30 +1,23 @@
-import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { Counter } from "../Counter/ItemCount";
-import ItemDetail from "../ItemDetail/ItemDetail";
-import VerDetalle from "../ItemDetail/ItemDetail";
+import { Link } from 'react-router-dom'
 
 
 const CardItem = (props) => {
-  
-  const id=props.item
 
+  
   return (
     <div className="m-3">
       {
         <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={props.img} />
+          <Card.Img variant="top" src={props.img} style={{height:"18rem"}}/>
           <Card.Body>
-            <Card.Title>{props.nombre}</Card.Title>
-            <Card.Text>{props.des}</Card.Text>
+            <Card.Title>{props.nombre},   <span>Precio:{props.precio}</span></Card.Title>
           </Card.Body>
-          <ListGroup className="list-group-flush">
-            <ListGroupItem>
-              <p>Precio:{props.precio}</p>
-            </ListGroupItem>
-          </ListGroup>
             <Counter stock={props.stock}/>
-            <ItemDetail id={props.id}/>
-            <button>Ver detalle</button>
+            <Link to={`/producto/${props.id}`}>
+            <button className='btn btn-primary' >Ver más</button>
+            </Link>
         </Card>
         
       }

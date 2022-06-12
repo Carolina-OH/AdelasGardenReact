@@ -38,12 +38,12 @@ export const Counter = (props) => {
             </ListGroup>
             <Card.Body>
             <Card.Link>
-              <button className="quitar" onClick={decrementar}>
+              <button className="quitar btn-primary" onClick={decrementar}>
                 quitar
               </button>
             </Card.Link>
             <Card.Link>
-              <button className="agregar" onClick={incrementar}>
+              <button className="agregar  btn-primary" onClick={incrementar}>
                 agregar
               </button>
               </Card.Link>

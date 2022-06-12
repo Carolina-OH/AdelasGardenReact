@@ -1,7 +1,7 @@
 import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => {
-  
+
   return (
     <section>
      <ItemList/>
