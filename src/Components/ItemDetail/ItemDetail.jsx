@@ -1,14 +1,25 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import { Counter } from '../Counter/ItemCount'
-const ItemDetail = (props) => {
+import { useState } from "react";
+const ItemDetail = ({item}) => {
+  let [cantidad, setCantidad] = useState(1);
+  const handleAgregar = ()=>{
+    const itemToCard= {
+      ...item, 
+      cantidad: cantidad
+    }
+     console.log(itemToCard)
+  }
+
   return (
     
-    <div class="container m-5" style={{border:'1px solid black'}}>
-    <p>Nombre:{props.nombre}</p>
-    <img class="productoimg" src={props.imagen} alt="ficcus" style={{width:"18rem"}}/>
-    <p>Descripción: {props.des}</p>
-    <p>Precio: {props.precio}</p>
+    <div className="container m-5" style={{border:'1px solid black'}}>
+    <p>Nombre:{item.nombre}</p>
+    <img className="productoimg" src={item.imagen} alt="" style={{width:"18rem"}}/>
+    <p>Descripción: {item.des}</p>
+    <p>Precio: {item.precio}</p>
+    <Counter max={item.stock} contador={cantidad} setContador={setCantidad} agregarAlCarro={handleAgregar}/>
     </div>
   )
 }

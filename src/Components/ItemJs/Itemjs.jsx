@@ -14,7 +14,6 @@ const CardItem = (props) => {
           <Card.Body>
             <Card.Title>{props.nombre},   <span>Precio:{props.precio}</span></Card.Title>
           </Card.Body>
-            <Counter stock={props.stock}/>
             <Link to={`/producto/${props.id}`}>
             <button className='btn btn-primary' >Ver más</button>
             </Link>

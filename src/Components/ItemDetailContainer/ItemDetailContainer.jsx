@@ -47,7 +47,7 @@ const ItemDetailContainer = () => {
       ? <Spinner animation="border" role="status">
         <span>Loading...</span>
       </Spinner>
-      :<ItemDetail nombre={item.nombre} imagen={item.imagen} des={item.des} precio={item.precio} stock={item.stock}/>
+      :<ItemDetail item={item}/>
       }
     </section>
   );
