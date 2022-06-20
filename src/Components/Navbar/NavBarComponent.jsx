@@ -21,7 +21,8 @@ function NavBarComponent() {
       <Nav.Link href="/categoria/accesorios">Accesorios</Nav.Link>
       <Nav.Link href="/categoria/mantenimiento">Mantenimiento</Nav.Link>
     </Nav>
-    <CartWidget className="ml-auto"></CartWidget>
+    <Nav.Link href="/cart"><CartWidget className="ml-auto"></CartWidget></Nav.Link>
+
     </Container>
   </Navbar>
 </>

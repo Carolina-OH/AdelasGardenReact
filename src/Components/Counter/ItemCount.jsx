@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Card, ListGroup, ListGroupItem} from "react-bootstrap";
+import { Link } from 'react-router-dom'
 
 export const Counter = ({max,setContador,contador, agregarAlCarro}) => {
-  let [stock, setStock] = useState(max);
+  let [stock, setStock] = useState(max-1);
 
 
   const incrementar = () => {
     if (stock>0 && contador<(max)) {
       setContador(contador + 1);
-   //   setStock(stock - 1);
+      setStock(stock - 1);
     } else {
       console.log("no hay más stock");
     }
@@ -17,7 +18,7 @@ export const Counter = ({max,setContador,contador, agregarAlCarro}) => {
   const decrementar = () => {
     if (contador >= 1 && stock >= 0) {
       setContador(contador - 1);
-   //   setStock(stock + 1);
+      setStock(stock + 1);
     } else setContador(0);
   };
 
@@ -28,7 +29,7 @@ export const Counter = ({max,setContador,contador, agregarAlCarro}) => {
         <div>
             <ListGroup>
             <ListGroupItem>
-              <p>Tienes {contador} en tu carrito</p>
+              <p>Tienes {contador} en tu carrito ({stock} disponible)</p>
             </ListGroupItem>
             </ListGroup>
             <Card.Body>
@@ -42,7 +43,9 @@ export const Counter = ({max,setContador,contador, agregarAlCarro}) => {
                 +
               </button>
               <hr></hr>
-              <button className="btn btn-primary center" onClick={agregarAlCarro}> Agregar al carrito</button>
+              <Link className="text-center mb-3"to={`/cart`}>
+              <button className="btn btn-primary center" onClick={agregarAlCarro}> Comprar</button>
+              </Link>
               </Card.Link>
               </Card.Body>
           </div>

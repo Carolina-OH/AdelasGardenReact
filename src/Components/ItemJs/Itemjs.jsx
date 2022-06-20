@@ -11,10 +11,12 @@ const CardItem = (props) => {
       {
         <Card style={{ width: "18rem" }}>
           <Card.Img variant="top" src={props.img} style={{height:"18rem"}}/>
-          <Card.Body>
-            <Card.Title>{props.nombre},   <span>Precio:{props.precio}</span></Card.Title>
+          <Card.Body className="text-center">
+            <Card.Title>{props.nombre}<hr></hr>   
+            <span>Precio:{props.precio}</span>
+            </Card.Title>
           </Card.Body>
-            <Link to={`/producto/${props.id}`}>
+            <Link className="text-center mb-3"to={`/producto/${props.id}`}>
             <button className='btn btn-primary' >Ver más</button>
             </Link>
         </Card>
