@@ -28,6 +28,10 @@ const ItemDetail = ({item}) => {
     navigate(-1)
   }
 
+  const handleState=()=>{
+    setShow(true)
+  }
+
 
   return (
     
@@ -40,8 +44,12 @@ const ItemDetail = ({item}) => {
         {show===true ?
         <Counter max={item.stock} contador={cantidad} setContador={setCantidad} agregarAlCarro={handleAgregar} volver={handleVolver}/>
         :
-        <Link className="text-center mb-3"to={`/cart`}><button className=' btn btn-primary'>Finalizar Compra</button></Link>
+        <div>
+        <Link className="text-center mb-3"to={`/cart`}><button className=' btn btn-primary m-2'>Finalizar Compra</button></Link>
+        <button className=' btn btn-primary m-2' onClick={handleState} >Seguir comprando</button>
+        </div>
         }
+
      </div>
     </div>
   )
