@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Card, ListGroup, ListGroupItem} from "react-bootstrap";
-import { Link } from 'react-router-dom'
 
-export const Counter = ({max,setContador,contador, agregarAlCarro}) => {
+
+export const Counter = ({max,setContador,contador, agregarAlCarro,volver}) => {
   let [stock, setStock] = useState(max-1);
 
 
@@ -22,32 +22,29 @@ export const Counter = ({max,setContador,contador, agregarAlCarro}) => {
     } else setContador(0);
   };
 
-
   return (
     <div>
       {
         <div>
-            <ListGroup>
-            <ListGroupItem>
-              <p>Tienes {contador} en tu carrito ({stock} disponible)</p>
-            </ListGroupItem>
-            </ListGroup>
-            <Card.Body>
-            <Card.Link>
+            <div>
+            <div className="Counterbtn">
               <button className="quitar btn btn-primary" onClick={decrementar}>
                 -
               </button>
-            </Card.Link>
-            <Card.Link>
+            
+            <span className="m-2">{contador}</span>
+
               <button className="agregar  btn btn-primary" onClick={incrementar}>
                 +
               </button>
+              </div>
               <hr></hr>
-              <Link className="text-center mb-3"to={`/cart`}>
-              <button className="btn btn-primary center" onClick={agregarAlCarro}> Comprar</button>
-              </Link>
-              </Card.Link>
-              </Card.Body>
+              
+              <button className="btn btn-primary center m-2" onClick={agregarAlCarro}> Agregar al carro</button>
+              
+              <button className="btn btn-primary center m-2" onClick={volver}> Volver</button>
+              
+              </div>
           </div>
 
       }
