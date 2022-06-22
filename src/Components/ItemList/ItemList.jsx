@@ -8,9 +8,9 @@ import { useParams } from "react-router-dom";
 const ItemList = () => {
   const [items, setItems] = useState([]);
 
-  console.log(
+/*   console.log(
     items.map((item) => <h2>{items.nombre}</h2>)
-  );
+  ); */
 
   const pedirDatos = () => {
     return new Promise((resolve, reject) => {
@@ -22,13 +22,13 @@ const ItemList = () => {
 
   const params = useParams();
   useEffect(()=>{
-    console.log('received by categoria:', params)
+ //   console.log('received by categoria:', params)
     return()=>{
-      console.log('will change by categoria:', params)
+ //     console.log('will change by categoria:', params)
     }
   }, [params]) 
   const {categoriaId} = useParams()
-  console.log(params)
+ // console.log(params)
 
   useEffect(() => {
     pedirDatos()
