@@ -4,6 +4,9 @@ import productos from "../ItemJs/ItemjsObjeto";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { Spinner } from "react-bootstrap";
+import {collection, getDocs} from 'firebase/firestore';
+import { db } from "../../index"
+
 
 const ItemDetailContainer = () => {
 
@@ -11,19 +14,45 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true)
 
 
-  const pedirDatos = () => {
+  useEffect(()=>{
+    setLoading(true)
+
+    const productosCollection = collection(db, 'productos');
+    getDocs(productosCollection)
+      .then((resp)=>{
+        const newItems = resp.docs.map((doc)=>{
+          return {
+            id: doc.id,
+            ...doc.data()
+          }
+        })
+        setItem(newItems.find((item)=> item.id=== (itemId)))
+        console.log(newItems)
+      })
+      .finally(()=>{
+        setLoading(false)})
+
+    }, [])
+
+
+
+/*   const pedirDatos = () => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(productos);
     },2000);
     });
-  };
+  }; */
+ 
 
+  
+
+  
   const {itemId} = useParams()
   //console.log(itemId)
   //console.log(item)
 
-  useEffect(() => {
+/*   useEffect(() => {
     setLoading(true)
 
     pedirDatos()
@@ -36,7 +65,7 @@ const ItemDetailContainer = () => {
       .finally(()=>{
         setLoading(false)
       })
-  }, []);
+  }, []); */
 
 
 

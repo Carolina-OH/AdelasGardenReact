@@ -20,7 +20,7 @@ const productos = [
     {
       id: 2,
       nombre: "Ruda",
-      des: "Planta terapeutica y aleja malas vibras",
+      des: "Planta terapeutica que aleja malas vibras",
       imagen:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrmmHUjIyfnunfK0EzyZwGc9VULM2EKCHMow&usqp=CAU",
       precio: "4000",
       stock: 25,

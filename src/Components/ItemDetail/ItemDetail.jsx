@@ -47,7 +47,7 @@ const ItemDetail = ({ item }) => {
       <img
         className="productoimg"
         src={item.imagen}
-        alt=""
+        alt={item.nombre}
         style={{ width: "18rem" }}
       />
       <div className="m-2 text-center" style={{ width: "50rem" }}>

@@ -1,6 +1,7 @@
 import { Card } from "react-bootstrap";
 import { Counter } from "../Counter/ItemCount";
 import { Link } from 'react-router-dom'
+import React from 'react';
 
 
 const CardItem = (props) => {

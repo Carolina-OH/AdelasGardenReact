@@ -2,15 +2,35 @@ import { useState, useEffect } from "react";
 import productos from "../ItemJs/ItemjsObjeto";
 import CardItem from "../ItemJs/ItemJs";
 import { useParams } from "react-router-dom";
+import React from 'react';
+import {collection, getDocs, where, query} from 'firebase/firestore';
+import { db } from "../../index"
 
 
 
 const ItemList = () => {
   const [items, setItems] = useState([]);
 
-/*   console.log(
-    items.map((item) => <h2>{items.nombre}</h2>)
-  ); */
+
+  useEffect(()=>{
+
+    const productosCollection = collection(db, 'productos');
+    const q = categoriaId ? query(productosCollection, where("categoria", "==",categoriaId)): productosCollection
+    
+    getDocs(q)
+      .then((resp)=>{
+        const newItems = resp.docs.map((doc)=>{
+          return {
+            id: doc.id,
+            ...doc.data()
+          }
+        })
+        console.log(newItems)
+        setItems(newItems)
+      })
+
+    }, [categoriaId])
+
 
   const pedirDatos = () => {
     return new Promise((resolve, reject) => {
@@ -30,7 +50,7 @@ const ItemList = () => {
   const {categoriaId} = useParams()
  // console.log(params)
 
-  useEffect(() => {
+/*   useEffect(() => {
     pedirDatos()
       .then((resp) => {
         if (!categoriaId){
@@ -44,7 +64,7 @@ const ItemList = () => {
       .catch((error) => {
         console.log("error:", error);
       });
-  }, []);
+  }, []); */
 
  
  

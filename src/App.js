@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./Components/Cart/Cart";
 import { CartProvider } from "./Context/CartContext";
+import React from 'react';
+
 
 function App() {
 

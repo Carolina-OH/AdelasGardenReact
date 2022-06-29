@@ -10,6 +10,7 @@ import {useCartContext } from '../../Context/CartContext'
 
 export default NavBarComponent
 function NavBarComponent() {
+  
   const {totalQuantity} = useCartContext()
   console.log(totalQuantity())
     return <>
