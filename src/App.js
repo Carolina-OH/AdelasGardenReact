@@ -6,6 +6,7 @@ import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailCont
 import Cart from "./Components/Cart/Cart";
 import { CartProvider } from "./Context/CartContext";
 import React from 'react';
+import Authenticator from "./Components/Authenticator/Authenticator";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             element={<ItemDetailContainer />}
           ></Route>
           <Route path="/cart" element={<Cart/>}></Route>
+          <Route path="/checkout" element={<Authenticator/>}></Route>
         </Routes>
       </BrowserRouter>
       </CartProvider>

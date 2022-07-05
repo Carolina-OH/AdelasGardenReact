@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import productos from "../ItemJs/ItemjsObjeto";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { Spinner } from "react-bootstrap";

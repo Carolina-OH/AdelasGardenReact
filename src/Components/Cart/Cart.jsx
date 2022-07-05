@@ -1,12 +1,14 @@
 import { useCartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import React from 'react';
-
+import { useState, useEffect} from "react";
+import { Redirect } from 'react-router-dom';
 
 const Carttotal = () => {
 
-  const { cart, calcularTotal, emptyCart, removeItem, totalQuantity } = useCartContext();
+  const { cart, calcularTotal, emptyCart, removeItem, totalQuantity,login, email } = useCartContext();
 
+  
   return (
     <div className="m-3">
       {totalQuantity()!==0 ? (
@@ -31,6 +33,8 @@ const Carttotal = () => {
           </div>
         }
         <div className='d-flex justify-content-center'>
+
+        <button onClick={login}><Link to ="/checkout">Inicia sesión</Link></button>
           <button className='btn btn-danger' onClick={emptyCart}>Vaciar carrito</button>
         </div>
       </div>)
