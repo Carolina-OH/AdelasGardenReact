@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 
 const Carttotal = () => {
 
-  const { cart, calcularTotal, emptyCart, removeItem, totalQuantity,login, email } = useCartContext();
+  const { cart, calcularTotal, emptyCart, removeItem, totalQuantity,login } = useCartContext();
 
   
   return (
@@ -18,15 +18,16 @@ const Carttotal = () => {
             <h1 className='text-center m-5'>Su total a pagar es de: {calcularTotal()}</h1>
             <div className='d-flex'>
               {cart.map((item) =>
-                <div key={item.id} className="m-3 text-center d-flex justify-content-center" style={{ width: "40rem", border: "solid 1px black" }}>
-                  <img className="productoimg d-flex" src={item.imagen} alt="" style={{ width: "8rem" }} />
+                <div key={item.id} className="m-3 p-3 d-flex justify-content-center" style={{ width: "max-content", border: "solid 1px black",boxSizing:"borderbox" }}>
+                  <img className="productoimg d-block" src={item.imagen} alt="" style={{ width: "10em" }} />
                   <div className='justify-content-center mt-2 text-center'>
                     <p>Nombre: {item.nombre}</p> <hr></hr>
                     <p>Cantidad: {item.cantidad}</p> <hr></hr>
                     <p>Total:{item.total}</p>
+                    <img className="d-flex btn"src="https://cdn-icons-png.flaticon.com/512/3143/3143497.png" style={{ height:"2em"}} onClick={() => removeItem(item.id)}></img>
                   </div>
                   <hr></hr>
-                  <button onClick={() => removeItem(item.id)}>X</button>
+                 
                 </div>
               )}
             </div>
@@ -34,8 +35,8 @@ const Carttotal = () => {
         }
         <div className='d-flex justify-content-center'>
 
-        <button onClick={login}><Link to ="/checkout">Inicia sesión</Link></button>
-          <button className='btn btn-danger' onClick={emptyCart}>Vaciar carrito</button>
+        <button className="btn btn-primary m-3 "onClick={login}><Link to ="/checkout" style={{ textDecoration: 'none', color:"inherit" }}>Avanzar al pago</Link></button>
+          <button className='btn btn-danger m-3' onClick={emptyCart}>Vaciar carrito</button>
         </div>
       </div>)
       :

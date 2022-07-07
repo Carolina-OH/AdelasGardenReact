@@ -8,6 +8,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { GoogleAuthProvider } from "firebase/auth";
+import { getDatabase } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA9YONzyYPSfKBXDo7zrHmjn1C4HP03kME",
@@ -21,6 +22,7 @@ const app = initializeApp(firebaseConfig);
 export const db= getFirestore(app);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

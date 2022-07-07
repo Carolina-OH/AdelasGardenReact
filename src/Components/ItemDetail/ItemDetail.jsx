@@ -65,7 +65,7 @@ const ItemDetail = ({ item }) => {
         ) : (
           <div>
             <Link className="text-center mb-3" to={`/cart`}>
-              <button className=" btn btn-primary m-2">Finalizar Compra</button>
+              <button className=" btn btn-primary m-2">Ir al carro</button>
             </Link>
             <button className=" btn btn-primary m-2" onClick={handleState}>
               Seguir comprando

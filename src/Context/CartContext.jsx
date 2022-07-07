@@ -4,7 +4,7 @@ import React from 'react';
 import {auth} from '../index'
 import { provider } from '../index';
 import {signInWithPopup} from "firebase/auth";
-import Authenticator from "../Components/Authenticator/Authenticator";
+import FinalizarCompra from "../Components/FinalizarCompra/FinalizarCompra";
 import { BrowserRouter, Routes, Router, Link } from "react-router-dom";
 
 export const CartContext = createContext()
@@ -16,11 +16,14 @@ export const useCartContext =()=>{
 export const CartProvider = ({children}) =>{
 
     const [cart, setCart] = useState([]);
-    const [email, setEmail] = useState()
+    const [resumen, setResumen] = useState([]);
+    const [user, setUser] = useState([])
+    const [loginStatus, setLoginStatus]=useState(true)
     console.log(cart);
   
     const addItem = (item) => {
       setCart([...cart, item]);
+      setResumen([...cart, item]);
       alert(`añadiste ${item.cantidad} a tu carrito`)
     };
   
@@ -48,8 +51,10 @@ export const CartProvider = ({children}) =>{
       signInWithPopup(auth, provider)
     .then((re) => {
       console.log(re)
-      const resp = re.user.email
-      setEmail(resp)
+      const resp = {email:re.user.email, NombreCliente: re.user.displayName}
+      setUser([resp])
+      setLoginStatus(false)
+      console.log(resp)
     })
     .catch((error)=>{
       console.log(error)
@@ -67,7 +72,10 @@ export const CartProvider = ({children}) =>{
             emptyCart,
             removeItem, 
             login,
-            email
+            user,
+            loginStatus,
+            resumen,
+            setResumen
 
 
         }

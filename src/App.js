@@ -6,7 +6,7 @@ import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailCont
 import Cart from "./Components/Cart/Cart";
 import { CartProvider } from "./Context/CartContext";
 import React from 'react';
-import Authenticator from "./Components/Authenticator/Authenticator";
+import FinalizarCompra from "./Components/FinalizarCompra/FinalizarCompra";
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
             element={<ItemDetailContainer />}
           ></Route>
           <Route path="/cart" element={<Cart/>}></Route>
-          <Route path="/checkout" element={<Authenticator/>}></Route>
+          <Route path="/checkout" element={<FinalizarCompra/>}></Route>
         </Routes>
       </BrowserRouter>
       </CartProvider>
