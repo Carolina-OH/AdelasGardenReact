@@ -75,7 +75,8 @@ export const CartProvider = ({children}) =>{
             user,
             loginStatus,
             resumen,
-            setResumen
+            setResumen, 
+            setCart
 
 
         }

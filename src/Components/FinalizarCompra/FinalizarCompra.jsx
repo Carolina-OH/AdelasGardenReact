@@ -9,7 +9,7 @@ import {db} from '../../index'
 
 export default function FinalizarCompra() {
 
-  const { user,loginStatus, resumen } = useCartContext();
+  const { user,loginStatus, resumen, setCart } = useCartContext();
   const [loading, setLoading] = useState(true)
   const [focused, setFocused] = useState(false);
   const [direccion, setDireccion]=useState()
@@ -69,6 +69,8 @@ export default function FinalizarCompra() {
     console.log(resumenFinal)
     setResumenFinal(resumenFin)
     setEstado(true)
+    alert('Su compra fue realizada con éxito')
+    setCart([])
   }
 
   useEffect(()=>{
@@ -120,7 +122,7 @@ export default function FinalizarCompra() {
         <li className='m-1' style={{listStyle:"none"}}><Select type="text" onChange={getComuna} options={comunas} className="address-user text-center" placeholder='Ingresa tu comuna'></Select></li>
       </ul>
 
-      <button className='pagarbtn btn btn-primary' onClick={terminarCompra}>Pagar</button>
+      <button className='pagarbtn btn btn-primary' style={{height:"2em"}} onClick={terminarCompra}>Pagar</button>
       </div>
 
 
