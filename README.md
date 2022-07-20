@@ -28,3 +28,6 @@ Al finalizar la compra el carrito se vaciará, y el usuario tendrá la posibilid
 __Resumen de la compra en gif__
 
 ![Recorrido compra](/public/recorridocompra.gif "Recorrido compra")
+
+
+deploy: https://adelasgarden-react.herokuapp.com/
