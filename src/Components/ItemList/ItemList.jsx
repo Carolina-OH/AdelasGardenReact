@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import productos from "../ItemJs/ItemjsObjeto";
-import CardItem from "../ItemJs/ItemJs";
+import CardItem from "../ItemJs/Itemjs";
 import { useParams } from "react-router-dom";
 import React from 'react';
 import {collection, getDocs, where, query} from 'firebase/firestore';
